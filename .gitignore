@@ -1,0 +1,8 @@
+.idea
+.vscode
+.editorconfig
+build
+coverage
+node_modules
+.history
+.DS_Store

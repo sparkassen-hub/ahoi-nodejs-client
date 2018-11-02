@@ -1,0 +1,43 @@
+{
+  "name": "ahoi-nodejs-client",
+  "version": "0.0.1",
+  "description": "",
+  "homepage": "https://github.com/sparkassen-hub/ahoi-nodejs-client",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com/sparkassen-hub/ahoi-nodejs-client"
+  },
+  "author": "Sparkassen Innovation Hub (s-hub)",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "keywords": [],
+  "scripts": {
+    "build": "rimraf dist && npm cache verify && tsc && npm run doc",
+    "build-sources": "tsc",
+    "prepublishOnly": "npm run build",
+    "doc": "rimraf docs && ./node_modules/.bin/compodoc ./src -p tsconfig.json -d ./docs --theme gitbook --hideGenerator --disableCoverage --toggleMenuItems default --silent",
+    "uml": "./node_modules/.bin/tsviz -r ./src/ ./docs/uml.png",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "ahoi-swagger-fetchclient": "https://github.com/sparkassen-hub/ahoi-swagger-fetchclient",
+    "jsonwebtoken": "^8.3.0",
+    "node-fetch": "^2.2.0"
+  },
+  "devDependencies": {
+    "@compodoc/compodoc": "^1.1.6",
+    "@types/crypto-js": "^3.1.41",
+    "@types/jsonwebtoken": "^7.2.8",
+    "@types/node-fetch": "^2.1.2",
+    "rimraf": "^2.6.2",
+    "tslint": "5.11.0",
+    "tslint-config-airbnb": "^5.11.0",
+    "tsviz": "^1.0.11",
+    "typedoc": "0.13.0",
+    "typescript": "3.1.5"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  }
+}

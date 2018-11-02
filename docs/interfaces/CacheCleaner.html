@@ -1,0 +1,281 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>ahoi-nodejs-client documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">ahoi-nodejs-client documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content interface">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Interfaces</li>
+  <li>CacheCleaner</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/starfinanz/ahoi/lib/cache/basiccache.ts</code>
+        </p>
+
+
+
+        <section>
+            <h3 id="index">Index</h3>
+            <table class="table table-sm table-bordered index-table">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Properties</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                            <a href="#call-declaration-483e4b45f98d4c7af4f0438cd9fe2991">Unamed property</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+
+
+            <section>
+                <h3 id="inputs">Properties</h3>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Signature :</i>
+                                            <a name="call-declaration-483e4b45f98d4c7af4f0438cd9fe2991"></a>
+                                            <code>
+                                                <!--ts.SyntaxKind.CallSignature-->
+                                                    [cacheMap: Map&lt;string | T&gt;]
+                                            </code>
+                                        </td>
+                                    </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Returns : </i>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+                        </tbody>
+                    </table>
+            </section>
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { debug } from &#x27;console&#x27;;
+import * as crypto from &#x27;crypto&#x27;;
+
+import { CacheCleaner } from &#x27;./basiccache&#x27;;
+
+export interface CacheCleaner&lt;T&gt; {
+  (cacheMap: Map&lt;string, T&gt;): void;
+}
+
+/**
+ * Simple function used to clean cache value for value. Function should return true, if value should
+ * removed from cache.&lt;br/&gt;&lt;br/&gt;
+ * Example implementation:
+ * &#x60;&#x60;&#x60;typescript
+ * private static cleanCache(): SimpleCacheCleaner&lt;Mytype&gt; {
+ *   return (value: Mytype) &#x3D;&gt; {
+ *     return new Date().getTime() - value.age &gt; 10000;
+ *   };
+ * }
+ * &#x60;&#x60;&#x60;
+ *
+ * @export
+ * @interface SimpleCacheCleaner
+ * @template T
+ */
+export interface SimpleCacheCleaner&lt;T&gt; {
+  (value: T): boolean;
+}
+
+export abstract class BasicCache&lt;T&gt; {
+
+  private cacheMap: Map&lt;string, T&gt;;
+
+  constructor(protected maxEntries: number,
+              tidyFunction?: CacheCleaner&lt;T&gt; | SimpleCacheCleaner&lt;T&gt;,
+              cleanInterval: number &#x3D; 1000 * 60 * 30) {
+    this.cacheMap &#x3D; new Map&lt;string, T&gt;();
+    if (tidyFunction) {
+      this.startCleanerJob(tidyFunction, cleanInterval);
+    }
+  }
+
+  public set(key: string, value: T) : void {
+    this.cacheMap.set(this.hashKey(key), value);
+    this.ensureCapacity();
+  }
+
+  public get(key: string) : T | undefined {
+    const hashedKey &#x3D; this.hashKey(key);
+    const value: T | undefined &#x3D; this.cacheMap.get(hashedKey);
+    // Move value to last position to ensure, never or rarely used items are at the top of the list.
+    // If cache size exceeds, values are deletet from top to bottom. So rarely used items will be
+    // deleted first.
+    if (value) {
+      this.cacheMap.delete(hashedKey);
+      this.cacheMap.set(hashedKey, value);
+    }
+    return value;
+  }
+
+  private hashKey(key: string): string {
+    return key.length &lt; 20 ? key : crypto.createHash(&#x27;sha1&#x27;).update(key).digest(&#x27;base64&#x27;);
+  }
+
+  // remove oldest cache value if cache size exceeds
+  private ensureCapacity(): void {
+    if (this.cacheMap.size &gt; this.maxEntries) {
+      // delete first item
+      for (const [key, value] of this.cacheMap) {
+        this.cacheMap.delete(key);
+        break;
+      }
+    }
+  }
+
+  private startCleanerJob(tidyFunction: CacheCleaner&lt;T&gt; | SimpleCacheCleaner&lt;T&gt;,
+                          cleanInterval: number): void {
+    if (tidyFunction.length &#x3D;&#x3D;&#x3D; 2) {
+      setInterval(() &#x3D;&gt; { tidyFunction.call(this.cacheMap); }, cleanInterval);
+    } else {
+      setInterval(() &#x3D;&gt; { this.cleanCache(tidyFunction as SimpleCacheCleaner&lt;T&gt;); }, cleanInterval);
+    }
+  }
+
+  private cleanCache(tidyFunction: SimpleCacheCleaner&lt;T&gt;): void {
+    for (const [key, value] of this.cacheMap.entries()) {
+      if (value) {
+        const shouldRemoved &#x3D; tidyFunction.apply(null, [value]);
+        if (shouldRemoved) {
+          debug(&#x27;Remove item %s from cache&#x27;, value);
+          this.cacheMap.delete(key);
+        }
+      }
+    }
+  }
+
+}
+</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
+            var COMPODOC_CURRENT_PAGE_URL = 'CacheCleaner.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

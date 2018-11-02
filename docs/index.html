@@ -1,0 +1,225 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>ahoi-nodejs-client documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+	      <link rel="stylesheet" href="./styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="./" class="navbar-brand">ahoi-nodejs-client documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content getting-started">
+                   <div class="content-data">
+
+<h1 id="ahoi-api-node-js-client">AHOI API Node.js Client</h1>
+<p><img src="./AHOI-Logo.png" alt="Sparkassen Innovation Hub" class="img-responsive"></p>
+<p>&rarr; <a href="https://github.com/sparkassen-hub/ahoi-nodejs-client">Zu GitHub</a></p>
+<h2 id="ahoi-open-banking-api">AHOI - Open Banking API</h2>
+<p>The AHOI Open Banking API provides easy access to banks and payment service providers.
+The API can be used to retrieve account and deposit account information, execute transfers,
+determine forecasts, and more.</p>
+<p>Get more information about the AHOI API here:</p>
+<ul>
+<li><a href="https://banking-sandbox.starfinanz.de/ahoi/docs/cookbook/index.html">AHOI Cookbook</a></li>
+<li><a href="https://banking-sandbox.starfinanz.de/ahoi/docs/api/swagger-ui/index.html#!/resource/Access">AHOI Explorer</a></li>
+<li><a href="https://banking-sandbox.starfinanz.de/sandboxmanager/">AHOI Demo-Account</a></li>
+</ul>
+<h2 id="ahoi-node-js-client">AHOI Node.js Client</h2>
+<p>This Node.js module provides easy access to banks via the AHOI Open Banking API. The client module is designed to be used within an existing Node.js application. It extends it with the feature  to get accesses to bank data such as account transactions or deposit data.</p>
+<p>To simply try out the client or as a starting point for your own application, we recommend
+our demo application which uses this client: <a href="https://github.com/sparkassen-hub/ahoi-nodejs-appservice">AHOI Node.js Appservice</a></p>
+<h2 id="getting-started">Getting Started</h2>
+<h3 id="prerequisites">Prerequisites</h3>
+<ul>
+<li>Node.js in Version 10.0.0 oder höher. Die Installation ist hier beschrieben : <a href="https://nodejs.org/en/download/">Node.js download</a>.</li>
+<li>Eine Node.js-Anwendung, in die das Modul als Abhängigkeit eingebunden wird.</li>
+</ul>
+<h3 id="install-the-node-module">Install the node module</h3>
+<div><pre class="line-numbers"><code class="language-bash">npm install --save git+ssh://git&#64;github.com:sparkassen-hub/ahoi-nodejs-client.git</code></pre></div><h3 id="create-an-ahoi-demo-account">Create an AHOI demo account</h3>
+<p>Go to <a href="https://banking-sandbox.starfinanz.de/sandboxmanager/">AHOI Demo-Account</a> and register for a
+demo account.</p>
+<h3 id="get-bank-account-transactions-in-5-steps">Get bank account transactions in 5 steps</h3>
+<p>To get account transactions for an user you have to manage five steps:</p>
+<ol>
+<li>Create a new user in AHOI (technically: retrieve an installationId)</li>
+<li>Let the user select a bank</li>
+<li>Create bank access with PIN and username</li>
+<li>(Optional) Select one or more accounts (default is all)</li>
+<li>Show the transactions for the selected accounts</li>
+</ol>
+<h3 id="quickstart">Quickstart</h3>
+<p>The following code snippets show how to technical implement the steps from creating a user in AHOI
+to retrieving account transactions.</p>
+<p>A) Include the module in your code</p>
+<div><pre class="line-numbers"><code class="language-typescript">// Typescript
+import { AhoiApiFactory } from &#39;ahoi-api-node&#39;;
+
+// JavaScript
+const { AhoiApiFactory } = require(&#39;ahoi-api-node&#39;);</code></pre></div><p>B) Add the configuration to access the AHOI API</p>
+<div><pre class="line-numbers"><code class="language-typescript">// Configuration: see information below
+const ahoiConfig = {
+  clientId: &#39;SBM_XXqaeX30T2D&#39;,
+  clientSecret: &#39;2e066yXXXLxa3zn&#39;,
+  appSecretIv: &#39;mP3IdoOKxVzOQzX22IueXg&#39;,
+  appSecretKey: &#39;dGw6XXtcyryKqXeeHgqPTg&#39;,
+  cryptKey: &#39;ScL&amp;aFPazDw6S#k3&#39;,
+  baseurl: &#39;https://banking-sandbox.starfinanz.de/ahoi/api/v2&#39;,
+};
+
+const ahoiApi = new AhoiApiFactory(ahoiConfig);</code></pre></div><p>C) Create a new user in AHOI</p>
+<div><pre class="line-numbers"><code class="language-typescript">// Get an installationid (and store it in your user management system)
+const registrationApi: RegistrationApi = await ahoiApi.getRegistrationApi();
+const installationId: RegistrationResponse = await registrationApi.register();</code></pre></div><p>D) Let the use select a bank, get a list of banks before</p>
+<div><pre class="line-numbers"><code class="language-typescript">// Get a list of(banking) providers
+const providerApi: ProviderApi = await ahoiApi.getProviderApi(installationId);
+const providers: Provider[] = await providerApi.getProviders();</code></pre></div><p>E) Create bank access with PIN and username</p>
+<p>The bank access is linked with the installationId</p>
+<div><pre class="line-numbers"><code class="language-typescript">// Grant banking access by a user
+const accessApi: AccessApi = await ahoiApi.getAccessApi(installationId);
+// To grant banking access the user must provide the pin and username or customernumber. It differs
+// from bank to to bank which data additionally to the pin are needed.
+const access: Access = {  
+                          type: &#39;BankAccess&#39;,
+                          providerId: provider[0].id,
+                          accessFields: {
+                                          USERNAME: username,
+                                          CUSTOMERNUMBER: customernumber,
+                                          PIN: pin,
+                                        },
+                        };
+const allowedAccess: Access = await accessApi.postAccess(access);</code></pre></div><p>E) Select accounts.</p>
+<p>As AHOI initially fetches all accounts from a bank access, the accounts not
+selected by user must be deleted from AHOI.</p>
+<div><pre class="line-numbers"><code class="language-typescript">// Delete banking accounts from AHOI or show as list
+const accountApi: AccountApi = await ahoiApi.getAccountApi(installationId);
+// accessid comes from banking access granted before: Access#id
+const accounts: Account[] = await accountApi.getAccounts(allowedAccess.id);
+await accountApi.deleteAccount(allowedAccess.id, accounts[0].id);</code></pre></div><p>F) Show account transactions</p>
+<div><pre class="line-numbers"><code class="language-typescript">// Show transactions for a bank account
+const accessApi: AccessApi = await ahoiApi.getAccessApi(Server.INSTALLATION_ID);
+        const transactions: Asset[] = accessApi.listAssets(accessId, accountId, 30);</code></pre></div><h3 id="configuration">Configuration</h3>
+<p>The AHOI access data (<strong>clientId</strong>, <strong>clientSecret</strong>, <strong>appSecretIv</strong>, <strong>appSecretKey</strong>) can be found in your AHOI
+(demo) account.</p>
+<p><img src="./ahoi-access-data-sandbox.png" alt="AHOI credentials" class="img-responsive"></p>
+<p>The <strong>cryptKey</strong> is used to encrypt the installationId internally before it is stored e.g. in a user
+mangement system. This way it is ensured, that the installationId for an user is always stored
+encrypted.</p>
+<p>You can choose any password as cryptKey, but the recommended length is 32 chars.</p>
+<h3 id="test-it-with-your-demo-account">Test it with your demo account</h3>
+<p>To get transactions for a bank account, you have to grant access before. But for sure you don&#39;t want
+to use your real bank access data.</p>
+<p>Exactly for this AHOI has (technically) created a demo bank called Sandbank. After registration at
+AHOI you have automatically two demo accounts at this bank. You&#39;ll find your access
+data (PIN and username) in your AHOI account.</p>
+<p>When testing the client you should select as bank the &#39;Sandbank&#39;. To grant access to the bank use
+the PIN and username from your AHOI account (see below).</p>
+<p><img src="./ahoi-demo-bankaccount-data.png" alt="AHOI credentials" class="img-responsive"></p>
+<h3 id="installationid">InstallationId</h3>
+<p>An installationId is needed to fetch account data for an user. In AHOI it is not linked with a user
+but only with one or more accounts. Therefore the following procedure should be chosen:</p>
+<ol>
+<li>Fetch installationId from AHOI</li>
+<li>Save installationId for an user e.g. within your user management</li>
+<li>Add bank accesses to this installationId</li>
+<li>Retrieve transactions for an user using the installationId linked to the user</li>
+</ol>
+<h2 id="ahoi-api-documentation">AHOI API Documentation</h2>
+<ul>
+<li><a href="https://sparkassen-hub.github.io/ahoi-swagger-fetchclient">AHOI API Docs</a></li>
+<li><a href="https://banking-sandbox.starfinanz.de/ahoi/docs/cookbook/index.html">AHOI Cookbook</a></li>
+<li><a href="https://banking-sandbox.starfinanz.de/ahoi/docs/api/swagger-ui/index.html#!/resource/Access">AHOI Explorer</a></li>
+<li><a href="https://sparkassen-hub.github.io/ahoi-nodejs-client">AHOI Node.js Client</a></li>
+</ul>
+<h2 id="build-from-source">Build from source</h2>
+<div><pre class="line-numbers"><code class="language-bash"># Build
+npm run build
+
+# Generate TS doc separate
+npm run doc</code></pre></div><h2 id="license">License</h2>
+<p>Licensed under <a href="./LICENSE">MIT</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 0;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'getting-started';
+            var COMPODOC_CURRENT_PAGE_URL = 'index.html';
+       </script>
+
+       <script src="./js/libs/custom-elements.min.js"></script>
+       <script src="./js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="./js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="./js/menu-wc.js" defer></script>
+
+       <script src="./js/libs/bootstrap-native.js"></script>
+
+       <script src="./js/libs/es6-shim.min.js"></script>
+       <script src="./js/libs/EventDispatcher.js"></script>
+       <script src="./js/libs/promise.min.js"></script>
+       <script src="./js/libs/zepto.min.js"></script>
+
+       <script src="./js/compodoc.js"></script>
+
+       <script src="./js/tabs.js"></script>
+       <script src="./js/menu.js"></script>
+       <script src="./js/libs/clipboard.min.js"></script>
+       <script src="./js/libs/prism.js"></script>
+       <script src="./js/sourceCode.js"></script>
+          <script src="./js/search/search.js"></script>
+          <script src="./js/search/lunr.min.js"></script>
+          <script src="./js/search/search-lunr.js"></script>
+          <script src="./js/search/search_index.js"></script>
+       <script src="./js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
