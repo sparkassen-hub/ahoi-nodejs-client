@@ -16,12 +16,13 @@
     "build": "rimraf dist && npm cache verify && tsc && npm run doc",
     "build-sources": "tsc",
     "prepublishOnly": "npm run build",
-    "doc": "rimraf docs && ./node_modules/.bin/compodoc ./src -p tsconfig.json -d ./docs --theme gitbook --hideGenerator --disableCoverage --toggleMenuItems default --silent",
+    "doc": "rimraf docs && ./node_modules/.bin/compodoc ./src -p tsconfig.json -d ./docs --theme gitbook --hideGenerator --disableCoverage --toggleMenuItems default --silent && cpx AHOI-Logo.png ./docs/AHOI-Logo.png",
     "uml": "./node_modules/.bin/tsviz -r ./src/ ./docs/uml.png",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
     "ahoi-swagger-fetchclient": "https://github.com/sparkassen-hub/ahoi-swagger-fetchclient",
+    "cpx": "^1.5.0",
     "jsonwebtoken": "^8.3.0",
     "node-fetch": "^2.2.0"
   },

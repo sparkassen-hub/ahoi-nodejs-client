@@ -183,7 +183,7 @@ but only with one or more accounts. Therefore the following procedure should be 
 * [AHOI API Docs](https://sparkassen-hub.github.io/ahoi-swagger-fetchclient)
 * [AHOI Cookbook](https://banking-sandbox.starfinanz.de/ahoi/docs/cookbook/index.html)
 * [AHOI Explorer](https://banking-sandbox.starfinanz.de/ahoi/docs/api/swagger-ui/index.html#!/resource/Access)
-* [AHOI Node.js Client](https://sparkassen-hub.github.io/ahoi-nodejs-client)
+* [AHOI Node.js Client](https://sparkassen-hub.github.io/ahoi-nodejs-client/classes/AhoiApiFactory.html)
 
 ## Build from source
 
