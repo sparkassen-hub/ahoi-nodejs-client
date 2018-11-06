@@ -96,8 +96,8 @@ class AhoiApiFactory extends abstractahoiapifactory_1.AbstractAhoiApiFactory {
      * @param installationId
      * @param bankingToken
      */
-    async getRegistrationApi(installationId = '', bankingToken) {
-        return this.getApiInstance(ahoi_swagger_fetchclient_1.RegistrationApi, installationId, bankingToken);
+    async getRegistrationApi(installationId, bankingToken) {
+        return this.getApiInstance(ahoi_swagger_fetchclient_1.RegistrationApi, installationId || '', bankingToken);
     }
     /**
      * A security is a tradable financial asset. This part of the API is not final and subject to
