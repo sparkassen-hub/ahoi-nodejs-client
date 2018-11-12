@@ -1,6 +1,6 @@
 {
   "name": "ahoi-nodejs-client",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Client that allows to connect with AHOI Open Banking API",
   "homepage": "https://github.com/sparkassen-hub/ahoi-nodejs-client",
   "repository": {
@@ -21,7 +21,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "ahoi-swagger-fetchclient": "https://github.com/sparkassen-hub/ahoi-swagger-fetchclient",
+    "ahoi-swagger-fetchclient": "https://github.com/sparkassen-hub/ahoi-swagger-fetchclient#v0.0.1",
     "cpx": "^1.5.0",
     "jsonwebtoken": "^8.3.0",
     "node-fetch": "^2.2.0"
