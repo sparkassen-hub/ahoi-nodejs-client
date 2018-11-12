@@ -59,7 +59,7 @@ class AbstractHttpFilter {
             }
             console_1.debug('fetch banking token');
             httpContext.bankingToken = await this.ahoiBankingTokenService.authenticate(httpContext.installationid);
-            console_1.debug('token is %s', httpContext.bankingToken);
+            console_1.debug('token is %o', httpContext.bankingToken);
         }
         return httpContext.bankingToken;
     }

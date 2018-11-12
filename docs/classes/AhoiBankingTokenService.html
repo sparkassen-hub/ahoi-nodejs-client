@@ -554,7 +554,7 @@ see: <a href="https://banking-sandbox.starfinanz.de/ahoi/docs/cookbook/index.htm
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/starfinanz/ahoi/auth/bankingtokenauth.ts:48</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">src/starfinanz/ahoi/auth/bankingtokenauth.ts:50</a></div>
                             </td>
                         </tr>
 
@@ -626,7 +626,7 @@ see: <a href="https://banking-sandbox.starfinanz.de/ahoi/docs/cookbook/index.htm
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="75" class="link-to-prism">src/starfinanz/ahoi/auth/bankingtokenauth.ts:75</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="77" class="link-to-prism">src/starfinanz/ahoi/auth/bankingtokenauth.ts:77</a></div>
                             </td>
                         </tr>
 
@@ -1017,6 +1017,7 @@ export class AhoiBankingTokenService extends AbstractAhoiAuthenticationService {
     const token &#x3D; this.tokencache.get(installationId);
     debug(&#x27;Get token from cache %s&#x27;, token);
     if (token &amp;&amp; !token.isExpired()) {
+      debug(&#x27;Get banking token from cache %o&#x27;, token);
       return token;
     }
 
@@ -1024,6 +1025,7 @@ export class AhoiBankingTokenService extends AbstractAhoiAuthenticationService {
     debug(&#x27;AuthHeader %o&#x27;, authHeader);
     const bankingtoken &#x3D; await this.callAhoiOAuthServer(authHeader);
     this.tokencache.set(installationId, bankingtoken);
+    debug(&#x27;Return banking token %o&#x27;, bankingtoken);
     return bankingtoken;
   }
 

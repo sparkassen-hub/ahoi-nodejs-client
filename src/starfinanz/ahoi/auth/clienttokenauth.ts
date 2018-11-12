@@ -1,5 +1,6 @@
 import { AbstractAhoiAuthenticationService } from './abstractauth';
 import { Token } from './token';
+import { debug } from 'console';
 
 export class AhoiClientTokenService extends AbstractAhoiAuthenticationService {
 
@@ -16,10 +17,12 @@ export class AhoiClientTokenService extends AbstractAhoiAuthenticationService {
    */
   public async authenticate(): Promise<Token> {
     if (this.accesstoken && !this.accesstoken.isExpired()) {
+      debug('Client token is not expired, return %o', this.accesstoken);
       return this.accesstoken;
     }
 
     this.accesstoken = await this.callAhoiOAuthServer();
+    debug('Get new client token, return %o', this.accesstoken);
     return this.accesstoken;
   }
 

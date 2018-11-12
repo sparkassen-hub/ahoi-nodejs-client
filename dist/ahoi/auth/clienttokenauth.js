@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const abstractauth_1 = require("./abstractauth");
+const console_1 = require("console");
 class AhoiClientTokenService extends abstractauth_1.AbstractAhoiAuthenticationService {
     /**
      * Authenticate and authorize the client using clientId and client-Secret against AHOI using the
@@ -13,9 +14,11 @@ class AhoiClientTokenService extends abstractauth_1.AbstractAhoiAuthenticationSe
      */
     async authenticate() {
         if (this.accesstoken && !this.accesstoken.isExpired()) {
+            console_1.debug('Client token is not expired, return %o', this.accesstoken);
             return this.accesstoken;
         }
         this.accesstoken = await this.callAhoiOAuthServer();
+        console_1.debug('Get new client token, return %o', this.accesstoken);
         return this.accesstoken;
     }
 }

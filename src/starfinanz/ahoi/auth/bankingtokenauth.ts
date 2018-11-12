@@ -35,6 +35,7 @@ export class AhoiBankingTokenService extends AbstractAhoiAuthenticationService {
     const token = this.tokencache.get(installationId);
     debug('Get token from cache %s', token);
     if (token && !token.isExpired()) {
+      debug('Get banking token from cache %o', token);
       return token;
     }
 
@@ -42,6 +43,7 @@ export class AhoiBankingTokenService extends AbstractAhoiAuthenticationService {
     debug('AuthHeader %o', authHeader);
     const bankingtoken = await this.callAhoiOAuthServer(authHeader);
     this.tokencache.set(installationId, bankingtoken);
+    debug('Return banking token %o', bankingtoken);
     return bankingtoken;
   }
 

@@ -357,7 +357,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="80" class="link-to-prism">src/starfinanz/ahoi/abstractahoiapifactory.ts:80</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="81" class="link-to-prism">src/starfinanz/ahoi/abstractahoiapifactory.ts:81</a></div>
                             </td>
                         </tr>
 
@@ -531,7 +531,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">src/starfinanz/ahoi/abstractahoiapifactory.ts:62</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="63" class="link-to-prism">src/starfinanz/ahoi/abstractahoiapifactory.ts:63</a></div>
                             </td>
                         </tr>
 
@@ -640,7 +640,7 @@ import { EncryptInstallationIdFilter } from &#x27;./httpfilter/encryptinstallati
 import { EncryptSessionFilter } from &#x27;./httpfilter/encryptsessionfilter&#x27;;
 import { HttpFilter } from &#x27;./lib/httpfilter/httpfilter&#x27;;
 import { HttpRequestTimeoutFilter } from &#x27;./httpfilter/httprequesttimeoutfilter&#x27;;
-import { warn } from &#x27;console&#x27;;
+import { debug, warn } from &#x27;console&#x27;;
 
 export abstract class AbstractAhoiApiFactory {
 
@@ -682,6 +682,7 @@ export abstract class AbstractAhoiApiFactory {
                                                basePath: string, fetch: FetchAPI) &#x3D;&gt; T),
                                     installationId: string,
                                     bankingToken?: string): Promise&lt;T&gt; {
+    debug(&#x27;InstallationId %s&#x27;, installationId);
     return new api(this.ahoiConfiguration, this.ahoiConfiguration.basePath || &#x27;&#x27;,
                    this.fetchHttpFactory.getHttpClient(installationId, bankingToken));
   }

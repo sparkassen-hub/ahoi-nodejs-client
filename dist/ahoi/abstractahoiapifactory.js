@@ -35,6 +35,7 @@ class AbstractAhoiApiFactory {
         this.fetchHttpFactory.setHttpFilter(httpfilter);
     }
     async getApiInstance(api, installationId, bankingToken) {
+        console_1.debug('InstallationId %s', installationId);
         return new api(this.ahoiConfiguration, this.ahoiConfiguration.basePath || '', this.fetchHttpFactory.getHttpClient(installationId, bankingToken));
     }
     initHttpFilters(ahoiClientTokenService, ahoiBankingTokenService, ahoiSessionKeyHeaderService, installationIdCryptService) {

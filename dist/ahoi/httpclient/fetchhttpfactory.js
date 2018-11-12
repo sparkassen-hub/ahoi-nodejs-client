@@ -63,9 +63,8 @@ class FetchHttpFactory {
         // apply request filters, e.g. to set authentication header (Bearer token) or encrypted
         // session key and encrypted installationid if encryption is needed
         console_1.debug('apply filters request for %s', httpContext.url);
-        //
         await this.applyFilters(httpContext, this.httpRequestFilters);
-        // debug(httpContext.options);
+        console_1.debug(httpContext.options);
         try {
             // execute request using fetch http client
             const response = await node_fetch_1.default(httpContext.url, httpContext.options);
@@ -82,8 +81,7 @@ class FetchHttpFactory {
             throw err instanceof Error ? err : new Error(err);
         }
         // debug(await httpContext.response.json());
-        // apply response filters (same as for request) e.g. to decrypt encrypted
-        // installationid
+        // apply response filters (same as for request) e.g. to decrypt encrypted installationid
         console_1.debug('Apply filters response for %s', httpContext.url);
         await this.applyFilters(Object.assign({}, httpContext, { isrequest: false }), this.httpResponseFilters);
         return httpContext.response;

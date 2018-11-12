@@ -184,7 +184,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="6" class="link-to-prism">src/starfinanz/ahoi/auth/clienttokenauth.ts:6</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="7" class="link-to-prism">src/starfinanz/ahoi/auth/clienttokenauth.ts:7</a></div>
                             </td>
                         </tr>
 
@@ -359,7 +359,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/starfinanz/ahoi/auth/clienttokenauth.ts:17</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/starfinanz/ahoi/auth/clienttokenauth.ts:18</a></div>
                             </td>
                         </tr>
 
@@ -725,6 +725,7 @@ different base url than the resource server (currently: /auth/v1 vs. /ahoi/api/v
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { AbstractAhoiAuthenticationService } from &#x27;./abstractauth&#x27;;
 import { Token } from &#x27;./token&#x27;;
+import { debug } from &#x27;console&#x27;;
 
 export class AhoiClientTokenService extends AbstractAhoiAuthenticationService {
 
@@ -741,10 +742,12 @@ export class AhoiClientTokenService extends AbstractAhoiAuthenticationService {
    */
   public async authenticate(): Promise&lt;Token&gt; {
     if (this.accesstoken &amp;&amp; !this.accesstoken.isExpired()) {
+      debug(&#x27;Client token is not expired, return %o&#x27;, this.accesstoken);
       return this.accesstoken;
     }
 
     this.accesstoken &#x3D; await this.callAhoiOAuthServer();
+    debug(&#x27;Get new client token, return %o&#x27;, this.accesstoken);
     return this.accesstoken;
   }
 

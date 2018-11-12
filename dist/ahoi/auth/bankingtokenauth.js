@@ -26,12 +26,14 @@ class AhoiBankingTokenService extends abstractauth_1.AbstractAhoiAuthenticationS
         const token = this.tokencache.get(installationId);
         console_1.debug('Get token from cache %s', token);
         if (token && !token.isExpired()) {
+            console_1.debug('Get banking token from cache %o', token);
             return token;
         }
         const authHeader = await this.createAuthHeader(installationId);
         console_1.debug('AuthHeader %o', authHeader);
         const bankingtoken = await this.callAhoiOAuthServer(authHeader);
         this.tokencache.set(installationId, bankingtoken);
+        console_1.debug('Return banking token %o', bankingtoken);
         return bankingtoken;
     }
     async createAuthHeader(installationId) {

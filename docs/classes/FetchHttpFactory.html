@@ -350,7 +350,7 @@ and data and the response from AHOI can be changed using filters <a href="FetchH
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="98" class="link-to-prism">src/starfinanz/ahoi/httpclient/fetchhttpfactory.ts:98</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="97" class="link-to-prism">src/starfinanz/ahoi/httpclient/fetchhttpfactory.ts:97</a></div>
                             </td>
                         </tr>
 
@@ -652,10 +652,10 @@ export class FetchHttpFactory {
     // apply request filters, e.g. to set authentication header (Bearer token) or encrypted
     // session key and encrypted installationid if encryption is needed
     debug(&#x27;apply filters request for %s&#x27;, httpContext.url);
-    //
+
     await this.applyFilters(httpContext, this.httpRequestFilters);
 
-    // debug(httpContext.options);
+    debug(httpContext.options);
     try {
       // execute request using fetch http client
       const response: Response &#x3D; await nodeFetch(httpContext.url, httpContext.options);
@@ -670,10 +670,9 @@ export class FetchHttpFactory {
       throw err instanceof Error ? err : new Error(err);
     }
 
-      // debug(await httpContext.response.json());
+    // debug(await httpContext.response.json());
 
-      // apply response filters (same as for request) e.g. to decrypt encrypted
-      // installationid
+    // apply response filters (same as for request) e.g. to decrypt encrypted installationid
     debug(&#x27;Apply filters response for %s&#x27;, httpContext.url);
     await this.applyFilters({ ...httpContext, isrequest: false }, this.httpResponseFilters);
     return httpContext.response;

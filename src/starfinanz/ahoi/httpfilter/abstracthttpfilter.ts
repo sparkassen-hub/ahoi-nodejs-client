@@ -70,7 +70,7 @@ export abstract class AbstractHttpFilter implements HttpFilter {
       }
       debug('fetch banking token');
       httpContext.bankingToken = await this.ahoiBankingTokenService.authenticate(httpContext.installationid);
-      debug('token is %s', httpContext.bankingToken);
+      debug('token is %o', httpContext.bankingToken);
     }
     return httpContext.bankingToken;
   }

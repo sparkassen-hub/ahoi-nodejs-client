@@ -13,7 +13,7 @@ import { EncryptInstallationIdFilter } from './httpfilter/encryptinstallationidf
 import { EncryptSessionFilter } from './httpfilter/encryptsessionfilter';
 import { HttpFilter } from './lib/httpfilter/httpfilter';
 import { HttpRequestTimeoutFilter } from './httpfilter/httprequesttimeoutfilter';
-import { warn } from 'console';
+import { debug, warn } from 'console';
 
 export abstract class AbstractAhoiApiFactory {
 
@@ -55,6 +55,7 @@ export abstract class AbstractAhoiApiFactory {
                                                basePath: string, fetch: FetchAPI) => T),
                                     installationId: string,
                                     bankingToken?: string): Promise<T> {
+    debug('InstallationId %s', installationId);
     return new api(this.ahoiConfiguration, this.ahoiConfiguration.basePath || '',
                    this.fetchHttpFactory.getHttpClient(installationId, bankingToken));
   }
