@@ -18,7 +18,7 @@
     "prepublishOnly": "npm run build",
     "doc": "./node_modules/typedoc/bin/typedoc --out ./docs ./src --target ES6 --hideGenerator --module commonjs --excludePrivate --excludeProtected --excludeExternals --mode file --theme default",
     "predoc": "rimraf ./docs",
-    "postdoc": "cpx ./AHOI-Logo.png ./docs/ && cpx .nojekyll ./docs",
+    "postdoc": "cpx ./AHOI-Logo.png ./docs/ && cpx ./_config.yml ./docs",
     "uml": "./node_modules/.bin/tsviz -r ./src/ ./docs/uml.png",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
