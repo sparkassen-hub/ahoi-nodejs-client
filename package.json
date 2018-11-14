@@ -19,7 +19,6 @@
     "doc": "./node_modules/typedoc/bin/typedoc --out ./docs ./src --target ES6 --hideGenerator --module commonjs --excludePrivate --excludeProtected --excludeExternals --mode file --theme default",
     "predoc": "rimraf ./docs",
     "postdoc": "cpx ./AHOI-Logo.png ./docs/ && cpx ./_config.yml ./docs",
-    "uml": "./node_modules/.bin/tsviz -r ./src/ ./docs/uml.png",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
@@ -35,7 +34,6 @@
     "rimraf": "^2.6.2",
     "tslint": "5.11.0",
     "tslint-config-airbnb": "^5.11.0",
-    "tsviz": "^1.0.11",
     "typedoc": "^0.13.0",
     "typescript": "3.1.5"
   },
