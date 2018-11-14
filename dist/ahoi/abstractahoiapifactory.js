@@ -53,14 +53,15 @@ class AbstractAhoiApiFactory {
             throw new Error('URL to AHOI API is missing in configuration (property: baseurl');
         }
         if (!config.clientId || !config.clientSecret) {
-            throw new Error('Credentials for the AHOI API are missing in configuration (properties: clientId, clientSecret)');
+            throw new Error('Credentials for the AHOI API missed in given configuration \
+      (properties: clientId, clientSecret)');
         }
         if (!config.appSecretIv || !config.appSecretKey) {
             console_1.warn('Secret or SecreIV are missing in configuration. \
       Encryption support is not available (properties appSecretKey, appSecretIv)');
         }
         if (!config.cryptKey) {
-            console_1.warn('CryptKey is missing in configuration. CryptSupport for InstallationId is not \
+            console_1.warn('CryptKey missed in configuration. CryptSupport for InstallationId is not \
       available (property: cryptKey)');
         }
     }

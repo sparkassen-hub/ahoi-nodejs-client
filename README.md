@@ -1,8 +1,6 @@
 # AHOI API Node.js Client
 
-![Sparkassen Innovation Hub](./AHOI-Logo.png)
-
-&rarr; [Zu GitHub](https://github.com/sparkassen-hub/ahoi-nodejs-client)
+[![Sparkassen Innovation Hub](./AHOI-Logo.png)](https://github.com/sparkassen-hub/ahoi-nodejs-client)
 
 ## AHOI - Open Banking API
 
@@ -10,19 +8,22 @@ The AHOI Open Banking API provides easy access to banks and payment service prov
 The API can be used to retrieve account and deposit account information, execute transfers,
 determine forecasts, and more.
 
-Get more information about the AHOI API here:
+Get more information about the AHOI API and API docs here:
 
 * [AHOI Cookbook](https://banking-sandbox.starfinanz.de/ahoi/docs/cookbook/index.html)
 * [AHOI Explorer](https://banking-sandbox.starfinanz.de/ahoi/docs/api/swagger-ui/index.html#!/resource/Access)
 * [AHOI Demo-Account](https://banking-sandbox.starfinanz.de/sandboxmanager/)
-
+* [AHOI Node.js API Docs](https://sparkassen-hub.github.io/ahoi-swagger-fetchclient/modules/_api_.html)
+* [AHOI Node.js Client](https://sparkassen-hub.github.io/ahoi-nodejs-client/classes/ahoiapifactory.html)
 
 ## AHOI Node.js Client
 
 This Node.js module provides easy access to banks via the AHOI Open Banking API. The client module is designed to be used within an existing Node.js application. It extends it with the feature  to get accesses to bank data such as account transactions or deposit data.
 
 To simply try out the client or as a starting point for your own application, we recommend
-our demo application which uses this client: [AHOI Node.js Appservice](https://github.com/sparkassen-hub/ahoi-nodejs-appservice)
+our demo application which uses this client:
+
+* [AHOI Node.js Demo App](https://github.com/sparkassen-hub/ahoi-nodejs-demo-app)
 
 ## Getting Started
 
@@ -177,13 +178,6 @@ but only with one or more accounts. Therefore the following procedure should be 
 2. Save installationId for an user e.g. within your user management
 3. Add bank accesses to this installationId
 4. Retrieve transactions for an user using the installationId linked to the user
-
-## AHOI API Documentation
-
-* [AHOI API Docs](https://sparkassen-hub.github.io/ahoi-swagger-fetchclient)
-* [AHOI Cookbook](https://banking-sandbox.starfinanz.de/ahoi/docs/cookbook/index.html)
-* [AHOI Explorer](https://banking-sandbox.starfinanz.de/ahoi/docs/api/swagger-ui/index.html#!/resource/Access)
-* [AHOI Node.js Client](https://sparkassen-hub.github.io/ahoi-nodejs-client/classes/AhoiApiFactory.html)
 
 ## Build from source
 

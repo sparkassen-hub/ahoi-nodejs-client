@@ -1,1129 +1,379 @@
 <!doctype html>
-<html class="no-js" lang="">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>ahoi-nodejs-client documentation</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
-	      <link rel="stylesheet" href="../styles/style.css">
-    </head>
-    <body>
-
-        <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="../" class="navbar-brand">ahoi-nodejs-client documentation</a>
-            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
-        </div>
-
-        <div class="xs-menu menu" id="mobile-menu">
-                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
-        </div>
-
-        <div class="container-fluid main">
-           <div class="row main">
-               <div class="hidden-xs menu">
-                   <compodoc-menu mode="normal"></compodoc-menu>
-               </div>
-               <!-- START CONTENT -->
-               <div class="content class">
-                   <div class="content-data">
-
-
-
-
-
-
-
-
-
-
-
-<ol class="breadcrumb">
-  <li>Classes</li>
-  <li>AbstractHttpFilter</li>
-</ol>
-
-<ul class="nav nav-tabs" role="tablist">
-        <li class="active">
-            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
-        </li>
-        <li >
-            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
-        </li>
-</ul>
-
-<div class="tab-content">
-    <div class="tab-pane fade active in" id="c-info">
-        <p class="comment">
-            <h3>File</h3>
-        </p>
-        <p class="comment">
-            <code>src/starfinanz/ahoi/httpfilter/abstracthttpfilter.ts</code>
-        </p>
-
-
-
-            <p class="comment">
-                <h3>Implements</h3>
-            </p>
-            <p class="comment">
-                        <code><a href="../interfaces/HttpFilter.html" target="_self" >HttpFilter</a></code>
-            </p>
-
-
-            <section>
-    <h3 id="index">Index</h3>
-    <table class="table table-sm table-bordered index-table">
-        <tbody>
-
-                <tr>
-                    <td class="col-md-4">
-                        <h6><b>Methods</b></h6>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <ul class="index-list">
-                            <li>
-                                    <span class="modifier">Public</span>
-                                    <span class="modifier">Async</span>
-                                <a href="#doFilter">doFilter</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Protected</span>
-                                    <span class="modifier">Async</span>
-                                <a href="#filterRequest">filterRequest</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Protected</span>
-                                    <span class="modifier">Async</span>
-                                <a href="#filterResponse">filterResponse</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Protected</span>
-                                    <span class="modifier">Async</span>
-                                <a href="#getAuthToken">getAuthToken</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Protected</span>
-                                    <span class="modifier">Async</span>
-                                <a href="#getBankingToken">getBankingToken</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Protected</span>
-                                    <span class="modifier">Async</span>
-                                <a href="#getResponse">getResponse</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Protected</span>
-                                    <span class="modifier">Async</span>
-                                <a href="#getToken">getToken</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Public</span>
-                                    <span class="modifier">Async</span>
-                                <a href="#matches">matches</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Protected</span>
-                                <a href="#setHeader">setHeader</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Protected</span>
-                                <a href="#usesMethod">usesMethod</a>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
-
-
-
-
-
-        </tbody>
-    </table>
-</section>
-
-            <section>
-    <h3 id="constructor">Constructor</h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-<code>constructor(ahoiClientTokenService: <a href="../classes/Token.html">AhoiClientTokenService</a>, ahoiBankingTokenService: <a href="../classes/Token.html">AhoiBankingTokenService</a>)</code>
-                    </td>
-                </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/starfinanz/ahoi/httpfilter/abstracthttpfilter.ts:10</a></div>
-                            </td>
-                        </tr>
-
-                <tr>
-                    <td class="col-md-4">
-                            <div>
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>ahoiClientTokenService</td>
-                                                  
-                                                        <td>
-                                                                    <code><a href="../classes/Token.html" target="_self" >AhoiClientTokenService</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                                <tr>
-                                                        <td>ahoiBankingTokenService</td>
-                                                  
-                                                        <td>
-                                                                    <code><a href="../classes/Token.html" target="_self" >AhoiBankingTokenService</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-</section>
-
-
-            <section>
-    
-        <h3 id="methods">
-            Methods
-        </h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="doFilter"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
-                                <span class="modifier">Async</span>
-                            doFilter
-                            </b>
-                            <a href="#doFilter"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                            <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>doFilter(httpContext: <a href="../interfaces/HttpContext.html">HttpContext</a>)</code>
-                    </td>
-                </tr>
-
-
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/starfinanz/ahoi/httpfilter/abstracthttpfilter.ts:19</a></div>
-                            </td>
-                        </tr>
-
-
-                <tr>
-                    <td class="col-md-4">
-
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>httpContext</td>
-                                                        <td>
-                                                                    <code><a href="../interfaces/HttpContext.html" target="_self" >HttpContext</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
-
-                            </div>
-                                <div class="io-description">
-                                    
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="filterRequest"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Protected</span>
-                                <span class="modifier">Async</span>
-                            filterRequest
-                            </b>
-                            <a href="#filterRequest"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                            <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>filterRequest(httpContext: <a href="../interfaces/HttpContext.html">HttpContext</a>)</code>
-                    </td>
-                </tr>
-
-
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/starfinanz/ahoi/httpfilter/abstracthttpfilter.ts:35</a></div>
-                            </td>
-                        </tr>
-
-
-                <tr>
-                    <td class="col-md-4">
-
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>httpContext</td>
-                                                        <td>
-                                                                    <code><a href="../interfaces/HttpContext.html" target="_self" >HttpContext</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
-
-                            </div>
-                                <div class="io-description">
-                                    
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="filterResponse"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Protected</span>
-                                <span class="modifier">Async</span>
-                            filterResponse
-                            </b>
-                            <a href="#filterResponse"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                            <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>filterResponse(httpContext: <a href="../interfaces/HttpContext.html">HttpContext</a>)</code>
-                    </td>
-                </tr>
-
-
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/starfinanz/ahoi/httpfilter/abstracthttpfilter.ts:37</a></div>
-                            </td>
-                        </tr>
-
-
-                <tr>
-                    <td class="col-md-4">
-
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>httpContext</td>
-                                                        <td>
-                                                                    <code><a href="../interfaces/HttpContext.html" target="_self" >HttpContext</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
-
-                            </div>
-                                <div class="io-description">
-                                    
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="getAuthToken"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Protected</span>
-                                <span class="modifier">Async</span>
-                            getAuthToken
-                            </b>
-                            <a href="#getAuthToken"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                            <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>getAuthToken(httpContext: <a href="../interfaces/HttpContext.html">HttpContext</a>)</code>
-                    </td>
-                </tr>
-
-
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="59" class="link-to-prism">src/starfinanz/ahoi/httpfilter/abstracthttpfilter.ts:59</a></div>
-                            </td>
-                        </tr>
-
-
-                <tr>
-                    <td class="col-md-4">
-
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>httpContext</td>
-                                                        <td>
-                                                                    <code><a href="../interfaces/HttpContext.html" target="_self" >HttpContext</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="../classes/Token.html" target="_self" >Promise&lt;Token&gt;</a></code>
-
-                            </div>
-                                <div class="io-description">
-                                    
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="getBankingToken"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Protected</span>
-                                <span class="modifier">Async</span>
-                            getBankingToken
-                            </b>
-                            <a href="#getBankingToken"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                            <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>getBankingToken(httpContext: <a href="../interfaces/HttpContext.html">HttpContext</a>)</code>
-                    </td>
-                </tr>
-
-
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="66" class="link-to-prism">src/starfinanz/ahoi/httpfilter/abstracthttpfilter.ts:66</a></div>
-                            </td>
-                        </tr>
-
-
-                <tr>
-                    <td class="col-md-4">
-
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>httpContext</td>
-                                                        <td>
-                                                                    <code><a href="../interfaces/HttpContext.html" target="_self" >HttpContext</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="../classes/Token.html" target="_self" >Promise&lt;Token&gt;</a></code>
-
-                            </div>
-                                <div class="io-description">
-                                    
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="getResponse"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Protected</span>
-                                <span class="modifier">Async</span>
-                            getResponse
-                            </b>
-                            <a href="#getResponse"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                            <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>getResponse(httpContext: <a href="../interfaces/HttpContext.html">HttpContext</a>)</code>
-                    </td>
-                </tr>
-
-
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/starfinanz/ahoi/httpfilter/abstracthttpfilter.ts:46</a></div>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td class="col-md-4">
-                                <b>Type parameters :</b>
-                                <ul class="type-parameters">
-                                        <li>T</li>
-                                </ul>
-                            </td>
-                        </tr>
-
-                <tr>
-                    <td class="col-md-4">
-
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>httpContext</td>
-                                                        <td>
-                                                                    <code><a href="../interfaces/HttpContext.html" target="_self" >HttpContext</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code>Promise&lt;T&gt;</code>
-
-                            </div>
-                                <div class="io-description">
-                                    
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="getToken"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Protected</span>
-                                <span class="modifier">Async</span>
-                            getToken
-                            </b>
-                            <a href="#getToken"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                            <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>getToken(httpContext: <a href="../interfaces/HttpContext.html">HttpContext</a>)</code>
-                    </td>
-                </tr>
-
-
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="78" class="link-to-prism">src/starfinanz/ahoi/httpfilter/abstracthttpfilter.ts:78</a></div>
-                            </td>
-                        </tr>
-
-
-                <tr>
-                    <td class="col-md-4">
-
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>httpContext</td>
-                                                        <td>
-                                                                    <code><a href="../interfaces/HttpContext.html" target="_self" >HttpContext</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="../classes/Token.html" target="_self" >Promise&lt;Token&gt;</a></code>
-
-                            </div>
-                                <div class="io-description">
-                                    
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="matches"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
-                                <span class="modifier">Async</span>
-                            matches
-                            </b>
-                            <a href="#matches"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                            <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>matches(httpContext: <a href="../interfaces/HttpContext.html">HttpContext</a>)</code>
-                    </td>
-                </tr>
-
-
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/starfinanz/ahoi/httpfilter/abstracthttpfilter.ts:15</a></div>
-                            </td>
-                        </tr>
-
-
-                <tr>
-                    <td class="col-md-4">
-
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>httpContext</td>
-                                                        <td>
-                                                                    <code><a href="../interfaces/HttpContext.html" target="_self" >HttpContext</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code>Promise&lt;boolean&gt;</code>
-
-                            </div>
-                                <div class="io-description">
-                                    
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="setHeader"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Protected</span>
-                            setHeader
-                            </b>
-                            <a href="#setHeader"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                            <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>setHeader(httpContext: <a href="../interfaces/HttpContext.html">HttpContext</a>, name: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, value: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
-                    </td>
-                </tr>
-
-
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/starfinanz/ahoi/httpfilter/abstracthttpfilter.ts:51</a></div>
-                            </td>
-                        </tr>
-
-
-                <tr>
-                    <td class="col-md-4">
-
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>httpContext</td>
-                                                        <td>
-                                                                    <code><a href="../interfaces/HttpContext.html" target="_self" >HttpContext</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-
-                                                </tr>
-                                                <tr>
-                                                        <td>name</td>
-                                                        <td>
-                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-
-                                                </tr>
-                                                <tr>
-                                                        <td>value</td>
-                                                        <td>
-                                                                    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                            </div>
-                                <div class="io-description">
-                                    
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="usesMethod"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Protected</span>
-                            usesMethod
-                            </b>
-                            <a href="#usesMethod"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                            <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>usesMethod(httpContext: <a href="../interfaces/HttpContext.html">HttpContext</a>, method: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
-                    </td>
-                </tr>
-
-
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/starfinanz/ahoi/httpfilter/abstracthttpfilter.ts:39</a></div>
-                            </td>
-                        </tr>
-
-
-                <tr>
-                    <td class="col-md-4">
-
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>httpContext</td>
-                                                        <td>
-                                                                    <code><a href="../interfaces/HttpContext.html" target="_self" >HttpContext</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-
-                                                </tr>
-                                                <tr>
-                                                        <td>method</td>
-                                                        <td>
-                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
-
-                            </div>
-                                <div class="io-description">
-                                    
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-</section>
-
-
-
-
-
-
-    </div>
-
-
-    <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { debug } from &#x27;console&#x27;;
-
-import { Headers } from &#x27;node-fetch&#x27;;
-
-import { AhoiBankingTokenService } from &#x27;../auth/bankingtokenauth&#x27;;
-import { AhoiClientTokenService } from &#x27;../auth/clienttokenauth&#x27;;
-import { Token } from &#x27;../auth/token&#x27;;
-import { HttpContext, HttpFilter } from &#x27;../lib/httpfilter/httpfilter&#x27;;
-
-export abstract class AbstractHttpFilter implements HttpFilter {
-
-  constructor(protected ahoiClientTokenService: AhoiClientTokenService,
-              protected ahoiBankingTokenService: AhoiBankingTokenService) { }
-
-  public async matches(httpContext: HttpContext): Promise&lt;boolean&gt; {
-    return false;
-  }
-
-  public async doFilter(httpContext: HttpContext): Promise&lt;void&gt; {
-    if (httpContext.isrequest) {
-      debug(&#x27;doFilter %s&#x27;, httpContext.url);
-      await this.filterRequest(httpContext);
-    } else {
-      if (httpContext.response.status &gt;&#x3D; 200 &amp;&amp; httpContext.response.status &lt; 300) {
-        const responseData &#x3D; await this.filterResponse(httpContext);
-        if (responseData) {
-          httpContext.response.json &#x3D; async () &#x3D;&gt; {
-            return responseData;
-          };
-        }
-      }
-    }
-  }
-
-  protected async filterRequest(httpContext: HttpContext): Promise&lt;void&gt; { }
-
-  protected async filterResponse(httpContext: HttpContext): Promise&lt;any&gt; { return null; }
-
-  protected usesMethod(httpContext: HttpContext, method: string): boolean {
-    if (httpContext.options.method &amp;&amp; method) {
-      return httpContext.options.method.toLowerCase() &#x3D;&#x3D;&#x3D; method.toLowerCase();
-    }
-    return false;
-  }
-
-  protected async getResponse&lt;T&gt;(httpContext: HttpContext): Promise&lt;T&gt; {
-    const responseData &#x3D; await httpContext.response.json();
-    return responseData as T;
-  }
-
-  protected setHeader(httpContext: HttpContext, name: string, value: any): void {
-    if (httpContext.options.headers instanceof Headers) {
-      httpContext.options.headers.set(name, value);
-    } else {
-      httpContext.options.headers &#x3D; { ...httpContext.options.headers, [name]: value };
-    }
-  }
-
-  protected async getAuthToken(httpContext: HttpContext): Promise&lt;Token&gt; {
-    if (!httpContext.authToken) {
-      httpContext.authToken &#x3D; await this.ahoiClientTokenService.authenticate();
-    }
-    return httpContext.authToken;
-  }
-
-  protected async getBankingToken(httpContext: HttpContext): Promise&lt;Token&gt; {
-    if (!httpContext.bankingToken) {
-      if (!httpContext.installationid) {
-        throw (&#x27;Can not get banking token without installationId.&#x27;);
-      }
-      debug(&#x27;fetch banking token&#x27;);
-      httpContext.bankingToken &#x3D; await this.ahoiBankingTokenService.authenticate(httpContext.installationid);
-      debug(&#x27;token is %o&#x27;, httpContext.bankingToken);
-    }
-    return httpContext.bankingToken;
-  }
-
-  protected async getToken(httpContext: HttpContext): Promise&lt;Token&gt; {
-    return httpContext.installationid ? this.getBankingToken(httpContext) : this.getAuthToken(httpContext);
-  }
-
-}
-</code></pre>
-    </div>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>AbstractHttpFilter | ahoi-nodejs-client</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.js" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">ahoi-nodejs-client</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../globals.html">Globals</a>
+				</li>
+				<li>
+					<a href="abstracthttpfilter.html">AbstractHttpFilter</a>
+				</li>
+			</ul>
+			<h1>Class AbstractHttpFilter</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">AbstractHttpFilter</span>
+						<ul class="tsd-hierarchy">
+							<li>
+								<a href="authheaderfilter.html" class="tsd-signature-type">AuthHeaderFilter</a>
+							</li>
+							<li>
+								<a href="encryptinstallationidfilter.html" class="tsd-signature-type">EncryptInstallationIdFilter</a>
+							</li>
+							<li>
+								<a href="encryptsessionfilter.html" class="tsd-signature-type">EncryptSessionFilter</a>
+							</li>
+							<li>
+								<a href="httprequesttimeoutfilter.html" class="tsd-signature-type">HttpRequestTimeoutFilter</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel">
+				<h3>Implements</h3>
+				<ul class="tsd-hierarchy">
+					<li><a href="../interfaces/httpfilter.html" class="tsd-signature-type">HttpFilter</a></li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Constructors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="abstracthttpfilter.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="abstracthttpfilter.html#dofilter" class="tsd-kind-icon">do<wbr>Filter</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="abstracthttpfilter.html#matches" class="tsd-kind-icon">matches</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
+					<a name="constructor" class="tsd-anchor"></a>
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Abstract<wbr>Http<wbr>Filter<span class="tsd-signature-symbol">(</span>ahoiClientTokenService<span class="tsd-signature-symbol">: </span><a href="ahoiclienttokenservice.html" class="tsd-signature-type">AhoiClientTokenService</a>, ahoiBankingTokenService<span class="tsd-signature-symbol">: </span><a href="ahoibankingtokenservice.html" class="tsd-signature-type">AhoiBankingTokenService</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="abstracthttpfilter.html" class="tsd-signature-type">AbstractHttpFilter</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/sparkassen-hub/ahoi-nodejs-client/blob/6ba3032/src/starfinanz/ahoi/httpfilter/abstracthttpfilter.ts#L10">ahoi/httpfilter/abstracthttpfilter.ts:10</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>ahoiClientTokenService: <a href="ahoiclienttokenservice.html" class="tsd-signature-type">AhoiClientTokenService</a></h5>
+								</li>
+								<li>
+									<h5>ahoiBankingTokenService: <a href="ahoibankingtokenservice.html" class="tsd-signature-type">AhoiBankingTokenService</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="abstracthttpfilter.html" class="tsd-signature-type">AbstractHttpFilter</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="dofilter" class="tsd-anchor"></a>
+					<h3>do<wbr>Filter</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">do<wbr>Filter<span class="tsd-signature-symbol">(</span>httpContext<span class="tsd-signature-symbol">: </span><a href="../interfaces/httpcontext.html" class="tsd-signature-type">HttpContext</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/httpfilter.html">HttpFilter</a>.<a href="../interfaces/httpfilter.html#dofilter">doFilter</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/sparkassen-hub/ahoi-nodejs-client/blob/6ba3032/src/starfinanz/ahoi/httpfilter/abstracthttpfilter.ts#L19">ahoi/httpfilter/abstracthttpfilter.ts:19</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>httpContext: <a href="../interfaces/httpcontext.html" class="tsd-signature-type">HttpContext</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="matches" class="tsd-anchor"></a>
+					<h3>matches</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">matches<span class="tsd-signature-symbol">(</span>httpContext<span class="tsd-signature-symbol">: </span><a href="../interfaces/httpcontext.html" class="tsd-signature-type">HttpContext</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/httpfilter.html">HttpFilter</a>.<a href="../interfaces/httpfilter.html#matches">matches</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/sparkassen-hub/ahoi-nodejs-client/blob/6ba3032/src/starfinanz/ahoi/httpfilter/abstracthttpfilter.ts#L15">ahoi/httpfilter/abstracthttpfilter.ts:15</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>httpContext: <a href="../interfaces/httpcontext.html" class="tsd-signature-type">HttpContext</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="../globals.html"><em>Globals</em></a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-enum">
+						<a href="../enums/cipher.html" class="tsd-kind-icon">Cipher</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="aescrypt.html" class="tsd-kind-icon">AESCrypt</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="abstractahoiapifactory.html" class="tsd-kind-icon">Abstract<wbr>Ahoi<wbr>Api<wbr>Factory</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="abstractahoiauthenticationservice.html" class="tsd-kind-icon">Abstract<wbr>Ahoi<wbr>Authentication<wbr>Service</a>
+					</li>
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class">
+						<a href="abstracthttpfilter.html" class="tsd-kind-icon">Abstract<wbr>Http<wbr>Filter</a>
+						<ul>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class">
+								<a href="abstracthttpfilter.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="abstracthttpfilter.html#dofilter" class="tsd-kind-icon">do<wbr>Filter</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="abstracthttpfilter.html#matches" class="tsd-kind-icon">matches</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+					<li class=" tsd-kind-class">
+						<a href="ahoiapifactory.html" class="tsd-kind-icon">Ahoi<wbr>Api<wbr>Factory</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="ahoibankingtokenservice.html" class="tsd-kind-icon">Ahoi<wbr>Banking<wbr>Token<wbr>Service</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="ahoiclienttokenservice.html" class="tsd-kind-icon">Ahoi<wbr>Client<wbr>Token<wbr>Service</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="ahoihelper.html" class="tsd-kind-icon">Ahoi<wbr>Helper</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="ahoipublickeyservice.html" class="tsd-kind-icon">Ahoi<wbr>Public<wbr>Key<wbr>Service</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="ahoisessionkeyheaderservice.html" class="tsd-kind-icon">Ahoi<wbr>Session<wbr>Key<wbr>Header<wbr>Service</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="authheaderfilter.html" class="tsd-kind-icon">Auth<wbr>Header<wbr>Filter</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="base64util.html" class="tsd-kind-icon">Base64<wbr>Util</a>
+					</li>
+					<li class=" tsd-kind-class tsd-has-type-parameter">
+						<a href="basiccache.html" class="tsd-kind-icon">Basic<wbr>Cache</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="cryptutil.html" class="tsd-kind-icon">Crypt<wbr>Util</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="encinstallationidcache.html" class="tsd-kind-icon">Enc<wbr>Installation<wbr>IdCache</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="encryptinstallationidfilter.html" class="tsd-kind-icon">Encrypt<wbr>Installation<wbr>IdFilter</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="encryptsessionfilter.html" class="tsd-kind-icon">Encrypt<wbr>Session<wbr>Filter</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="fetchhttpfactory.html" class="tsd-kind-icon">Fetch<wbr>Http<wbr>Factory</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="httprequesttimeoutfilter.html" class="tsd-kind-icon">Http<wbr>Request<wbr>Timeout<wbr>Filter</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="installationidcryptservice.html" class="tsd-kind-icon">Installation<wbr>IdCrypt<wbr>Service</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="rsacrypt.html" class="tsd-kind-icon">RSACrypt</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="token.html" class="tsd-kind-icon">Token</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="tokencache.html" class="tsd-kind-icon">Token<wbr>Cache</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="../interfaces/ahoiconfig.html" class="tsd-kind-icon">Ahoi<wbr>Config</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-has-type-parameter">
+						<a href="../interfaces/cachecleaner.html" class="tsd-kind-icon">Cache<wbr>Cleaner</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="../interfaces/httpcontext.html" class="tsd-kind-icon">Http<wbr>Context</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="../interfaces/httpfilter.html" class="tsd-kind-icon">Http<wbr>Filter</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-has-type-parameter">
+						<a href="../interfaces/simplecachecleaner.html" class="tsd-kind-icon">Simple<wbr>Cache<wbr>Cleaner</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-not-exported">
+						<a href="../interfaces/tokendata.html" class="tsd-kind-icon">Token<wbr>Data</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
 </div>
-
-
-
-
-
-
-
-                   </div><div class="search-results">
-    <div class="has-results">
-        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
-        <ul class="search-results-list"></ul>
-    </div>
-    <div class="no-results">
-        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
-    </div>
-</div>
-</div>
-               <!-- END CONTENT -->
-           </div>
-       </div>
-
-       <script>
-            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
-            var COMPODOC_CURRENT_PAGE_URL = 'AbstractHttpFilter.html';
-       </script>
-
-       <script src="../js/libs/custom-elements.min.js"></script>
-       <script src="../js/libs/lit-html.js"></script>
-       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
-       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
-       <script src="../js/menu-wc.js" defer></script>
-
-       <script src="../js/libs/bootstrap-native.js"></script>
-
-       <script src="../js/libs/es6-shim.min.js"></script>
-       <script src="../js/libs/EventDispatcher.js"></script>
-       <script src="../js/libs/promise.min.js"></script>
-       <script src="../js/libs/zepto.min.js"></script>
-
-       <script src="../js/compodoc.js"></script>
-
-       <script src="../js/tabs.js"></script>
-       <script src="../js/menu.js"></script>
-       <script src="../js/libs/clipboard.min.js"></script>
-       <script src="../js/libs/prism.js"></script>
-       <script src="../js/sourceCode.js"></script>
-          <script src="../js/search/search.js"></script>
-          <script src="../js/search/lunr.min.js"></script>
-          <script src="../js/search/search-lunr.js"></script>
-          <script src="../js/search/search_index.js"></script>
-       <script src="../js/lazy-load-graphs.js"></script>
-
-
-    </body>
+<footer>
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
+</body>
 </html>
