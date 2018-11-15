@@ -1,6 +1,12 @@
 # AHOI API Node.js Client
 
-[![Sparkassen Innovation Hub](./AHOI-Logo.png)](https://github.com/sparkassen-hub/ahoi-nodejs-client)
+[![Sparkassen Innovation
+Hub](./AHOI-Logo.png)](https://github.com/sparkassen-hub/ahoi-nodejs-client)
+
+## API Docs
+
+**&rarr; [API
+Docs](https://sparkassen-hub.github.io/ahoi-nodejs-client/classes/ahoiapifactory.html)**
 
 ## AHOI - Open Banking API
 
@@ -14,7 +20,6 @@ Get more information about the AHOI API and API docs here:
 * [AHOI Explorer](https://banking-sandbox.starfinanz.de/ahoi/docs/api/swagger-ui/index.html#!/resource/Access)
 * [AHOI Demo-Account](https://banking-sandbox.starfinanz.de/sandboxmanager/)
 * [AHOI Node.js API Docs](https://sparkassen-hub.github.io/ahoi-swagger-fetchclient/modules/_api_.html)
-* [AHOI Node.js Client](https://sparkassen-hub.github.io/ahoi-nodejs-client/classes/ahoiapifactory.html)
 
 ## AHOI Node.js Client
 
