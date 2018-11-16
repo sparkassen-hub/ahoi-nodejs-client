@@ -6,7 +6,7 @@ export declare class AhoiBankingTokenService extends AbstractAhoiAuthenticationS
     private ahoiClientTokenService;
     static readonly AUTH_BANKINGTOKEN_HEADER = "X-Authorization-Ahoi";
     private readonly tokencache;
-    constructor(config: AhoiConfig, ahoiClientTokenService: AhoiClientTokenService);
+    constructor(config: AhoiConfig, ahoiClientTokenService: AhoiClientTokenService, baseUrl: string);
     /**
      * Authenticate and authorize the user with the given installationId against AHOI using OAuth 2.0
      * protocol. The returned authorization token called 'banking token' is needed to access the AHOI

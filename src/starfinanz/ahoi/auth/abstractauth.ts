@@ -12,8 +12,7 @@ export abstract class AbstractAhoiAuthenticationService {
 
   protected readonly uri: string;
 
-  constructor(protected config: AhoiConfig) {
-    const baseUrl = this.getBaseUrl(config.baseurl);
+  constructor(protected config: AhoiConfig, baseUrl: string) {
     // tslint:disable-next-line:max-line-length
     this.uri = `${baseUrl}${AbstractAhoiAuthenticationService.AUTH_URI}?${AbstractAhoiAuthenticationService.AUTH_CREDENTIALS_PARAMETER}`;
   }
@@ -61,25 +60,6 @@ export abstract class AbstractAhoiAuthenticationService {
     const headers: Headers = new Headers(authHeaders);
     this.mergeHeaders(headers, headerMap);
     return headers;
-  }
-
-  /**
-   * Extracts protocol and domain from given url<br/>
-   * Given 'https://banking-sandbox.starfinanz.de/ahoi/api/v2' the result is
-   * 'https://banking-sandbox.starfinanz.de'<br/>
-   * This helper function is needed as the base url for the AHOI authorization server may have a
-   * different base url than the resource server (currently: /auth/v1 vs. /ahoi/api/v2)
-   *
-   * @private
-   * @param {string} baseUrl
-   * @returns {string}
-   * @memberof AhoiAuthenticationService
-   */
-  private getBaseUrl(baseUrl: string): string {
-    const start = baseUrl.search(/\/\//);
-    const protocol = baseUrl.substring(0, start === -1 ? 0 : start + 2);
-    const domain = (baseUrl.substring(protocol.length).match(/[^\/]+/) || [''])[0];
-    return protocol + domain;
   }
 
 }

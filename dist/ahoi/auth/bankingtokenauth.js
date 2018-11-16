@@ -7,8 +7,8 @@ const base64util_1 = require("../lib/crypt/base64util");
 const cryptutil_1 = require("../lib/crypt/cryptutil");
 const abstractauth_1 = require("./abstractauth");
 class AhoiBankingTokenService extends abstractauth_1.AbstractAhoiAuthenticationService {
-    constructor(config, ahoiClientTokenService) {
-        super(config);
+    constructor(config, ahoiClientTokenService, baseUrl) {
+        super(config, baseUrl);
         this.ahoiClientTokenService = ahoiClientTokenService;
         this.tokencache = new tokencache_1.TokenCache();
     }

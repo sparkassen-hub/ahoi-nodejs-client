@@ -16,8 +16,9 @@ export class AhoiBankingTokenService extends AbstractAhoiAuthenticationService {
   private readonly tokencache: TokenCache;
 
   constructor(config: AhoiConfig,
-              private ahoiClientTokenService: AhoiClientTokenService) {
-    super(config);
+              private ahoiClientTokenService: AhoiClientTokenService,
+              baseUrl: string) {
+    super(config, baseUrl);
     this.tokencache = new TokenCache();
   }
 

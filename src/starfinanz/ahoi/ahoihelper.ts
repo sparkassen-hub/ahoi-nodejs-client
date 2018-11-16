@@ -7,7 +7,9 @@ export class AhoiHelper {
 
   constructor(private installationIdCryptService: InstallationIdCryptService,
               private ahoiClientTokenService: AhoiClientTokenService,
-              private ahoiBankingTokenService: AhoiBankingTokenService) { }
+              private ahoiBankingTokenService: AhoiBankingTokenService,
+              private baseUrl: string,
+              private apiUrl: string) { }
 
   public async encryptInstallationId(installationId: string): Promise<string> {
     if (this.installationIdCryptService) {
@@ -30,5 +32,29 @@ export class AhoiHelper {
 
   public async getClientAuthToken(): Promise<Token> {
     return this.ahoiClientTokenService.authenticate();
+  }
+
+  /**
+   * Return the base url that is used e.g. to authenticate the app against AHOI.
+   *
+   * @example https://banking-sandbox.starfinanz.de
+   *
+   * @returns {string}
+   * @memberof AhoiHelper
+   */
+  public getBaseUrl(): string {
+    return this.baseUrl;
+  }
+
+  /**
+   * Return the API url used to get data from AHOI.
+   *
+   * @example https://banking-sandbox.starfinanz.de/ahoi/api/v2
+   *
+   * @returns {string}
+   * @memberof AhoiHelper
+   */
+  public getApiUrl(): string {
+    return this.apiUrl;
   }
 }

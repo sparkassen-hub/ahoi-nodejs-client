@@ -4,9 +4,8 @@ const console_1 = require("console");
 const node_fetch_1 = require("node-fetch");
 const token_1 = require("./token");
 class AbstractAhoiAuthenticationService {
-    constructor(config) {
+    constructor(config, baseUrl) {
         this.config = config;
-        const baseUrl = this.getBaseUrl(config.baseurl);
         // tslint:disable-next-line:max-line-length
         this.uri = `${baseUrl}${AbstractAhoiAuthenticationService.AUTH_URI}?${AbstractAhoiAuthenticationService.AUTH_CREDENTIALS_PARAMETER}`;
     }
@@ -50,24 +49,6 @@ class AbstractAhoiAuthenticationService {
         const headers = new node_fetch_1.Headers(authHeaders);
         this.mergeHeaders(headers, headerMap);
         return headers;
-    }
-    /**
-     * Extracts protocol and domain from given url<br/>
-     * Given 'https://banking-sandbox.starfinanz.de/ahoi/api/v2' the result is
-     * 'https://banking-sandbox.starfinanz.de'<br/>
-     * This helper function is needed as the base url for the AHOI authorization server may have a
-     * different base url than the resource server (currently: /auth/v1 vs. /ahoi/api/v2)
-     *
-     * @private
-     * @param {string} baseUrl
-     * @returns {string}
-     * @memberof AhoiAuthenticationService
-     */
-    getBaseUrl(baseUrl) {
-        const start = baseUrl.search(/\/\//);
-        const protocol = baseUrl.substring(0, start === -1 ? 0 : start + 2);
-        const domain = (baseUrl.substring(protocol.length).match(/[^\/]+/) || [''])[0];
-        return protocol + domain;
     }
 }
 AbstractAhoiAuthenticationService.AUTH_URI = '/auth/v1/oauth/token';

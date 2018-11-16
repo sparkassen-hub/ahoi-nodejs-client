@@ -17,19 +17,21 @@ class AbstractAhoiApiFactory {
     constructor(config) {
         this.config = config;
         this.checkConfig(config);
+        this.apiUrl = config.baseurl;
+        this.baseUrl = this.getBaseUrl(this.apiUrl);
         /* init services */
         this.fetchHttpFactory = new fetchhttpfactory_1.FetchHttpFactory();
         const ahoiPublicKeyService = new ahoipublickey_1.AhoiPublicKeyService(this.fetchHttpFactory, config.baseurl);
         const ahoiSessionKeyHeaderService = new sessionkeyheaderservice_1.AhoiSessionKeyHeaderService(ahoiPublicKeyService);
-        const ahoiClientTokenService = new clienttokenauth_1.AhoiClientTokenService(config);
-        const ahoiBankingTokenService = new bankingtokenauth_1.AhoiBankingTokenService(config, ahoiClientTokenService);
+        const ahoiClientTokenService = new clienttokenauth_1.AhoiClientTokenService(config, this.baseUrl);
+        const ahoiBankingTokenService = new bankingtokenauth_1.AhoiBankingTokenService(config, ahoiClientTokenService, this.baseUrl);
         // Try to fetch auth token on startup without blocking the thread by using await
         ahoiClientTokenService.authenticate();
         this.ahoiConfiguration = new ahoi_swagger_fetchclient_1.Configuration({ basePath: config.baseurl });
         if (config.cryptKey) {
             this.installationIdCryptService = new installationidcryptservice_1.InstallationIdCryptService(config.cryptKey);
         }
-        this.ahoiHelper = new ahoihelper_1.AhoiHelper(this.installationIdCryptService, ahoiClientTokenService, ahoiBankingTokenService);
+        this.ahoiHelper = new ahoihelper_1.AhoiHelper(this.installationIdCryptService, ahoiClientTokenService, ahoiBankingTokenService, this.baseUrl, this.apiUrl);
         /* init http filters */
         const httpfilter = this.initHttpFilters(ahoiClientTokenService, ahoiBankingTokenService, ahoiSessionKeyHeaderService, this.installationIdCryptService);
         this.fetchHttpFactory.setHttpFilter(httpfilter);
@@ -64,6 +66,24 @@ class AbstractAhoiApiFactory {
             console_1.warn('CryptKey missed in configuration. CryptSupport for InstallationId is not \
       available (property: cryptKey)');
         }
+    }
+    /**
+     * Extracts protocol and domain from given url<br/>
+     * Given 'https://banking-sandbox.starfinanz.de/ahoi/api/v2' the result is
+     * 'https://banking-sandbox.starfinanz.de'<br/>
+     * This helper function is needed as the base url for the AHOI authorization server may have a
+     * different base url than the resource server (currently: /auth/v1 vs. /ahoi/api/v2)
+     *
+     * @private
+     * @param {string} baseUrl
+     * @returns {string}
+     * @memberof AhoiAuthenticationService
+     */
+    getBaseUrl(baseUrl) {
+        const start = baseUrl.search(/\/\//);
+        const protocol = baseUrl.substring(0, start === -1 ? 0 : start + 2);
+        const domain = (baseUrl.substring(protocol.length).match(/[^\/]+/) || [''])[0];
+        return protocol + domain;
     }
 }
 exports.AbstractAhoiApiFactory = AbstractAhoiApiFactory;

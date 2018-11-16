@@ -87,7 +87,9 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="ahoihelper.html#decryptinstallationid" class="tsd-kind-icon">decrypt<wbr>Installation<wbr>Id</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="ahoihelper.html#encryptinstallationid" class="tsd-kind-icon">encrypt<wbr>Installation<wbr>Id</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="ahoihelper.html#getapiurl" class="tsd-kind-icon">get<wbr>Api<wbr>Url</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="ahoihelper.html#getbankingtoken" class="tsd-kind-icon">get<wbr>Banking<wbr>Token</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="ahoihelper.html#getbaseurl" class="tsd-kind-icon">get<wbr>Base<wbr>Url</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="ahoihelper.html#getclientauthtoken" class="tsd-kind-icon">get<wbr>Client<wbr>Auth<wbr>Token</a></li>
 							</ul>
 						</section>
@@ -100,13 +102,13 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Ahoi<wbr>Helper<span class="tsd-signature-symbol">(</span>installationIdCryptService<span class="tsd-signature-symbol">: </span><a href="installationidcryptservice.html" class="tsd-signature-type">InstallationIdCryptService</a>, ahoiClientTokenService<span class="tsd-signature-symbol">: </span><a href="ahoiclienttokenservice.html" class="tsd-signature-type">AhoiClientTokenService</a>, ahoiBankingTokenService<span class="tsd-signature-symbol">: </span><a href="ahoibankingtokenservice.html" class="tsd-signature-type">AhoiBankingTokenService</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="ahoihelper.html" class="tsd-signature-type">AhoiHelper</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Ahoi<wbr>Helper<span class="tsd-signature-symbol">(</span>installationIdCryptService<span class="tsd-signature-symbol">: </span><a href="installationidcryptservice.html" class="tsd-signature-type">InstallationIdCryptService</a>, ahoiClientTokenService<span class="tsd-signature-symbol">: </span><a href="ahoiclienttokenservice.html" class="tsd-signature-type">AhoiClientTokenService</a>, ahoiBankingTokenService<span class="tsd-signature-symbol">: </span><a href="ahoibankingtokenservice.html" class="tsd-signature-type">AhoiBankingTokenService</a>, baseUrl<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, apiUrl<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="ahoihelper.html" class="tsd-signature-type">AhoiHelper</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/sparkassen-hub/ahoi-nodejs-client/blob/39fe511/src/starfinanz/ahoi/ahoihelper.ts#L6">ahoi/ahoihelper.ts:6</a></li>
+									<li>Defined in <a href="https://github.com/sparkassen-hub/ahoi-nodejs-client/blob/9f254fc/src/starfinanz/ahoi/ahoihelper.ts#L6">ahoi/ahoihelper.ts:6</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -119,6 +121,12 @@
 								</li>
 								<li>
 									<h5>ahoiBankingTokenService: <a href="ahoibankingtokenservice.html" class="tsd-signature-type">AhoiBankingTokenService</a></h5>
+								</li>
+								<li>
+									<h5>baseUrl: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>apiUrl: <span class="tsd-signature-type">string</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="ahoihelper.html" class="tsd-signature-type">AhoiHelper</a></h4>
@@ -138,7 +146,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/sparkassen-hub/ahoi-nodejs-client/blob/39fe511/src/starfinanz/ahoi/ahoihelper.ts#L19">ahoi/ahoihelper.ts:19</a></li>
+									<li>Defined in <a href="https://github.com/sparkassen-hub/ahoi-nodejs-client/blob/9f254fc/src/starfinanz/ahoi/ahoihelper.ts#L21">ahoi/ahoihelper.ts:21</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -161,7 +169,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/sparkassen-hub/ahoi-nodejs-client/blob/39fe511/src/starfinanz/ahoi/ahoihelper.ts#L12">ahoi/ahoihelper.ts:12</a></li>
+									<li>Defined in <a href="https://github.com/sparkassen-hub/ahoi-nodejs-client/blob/9f254fc/src/starfinanz/ahoi/ahoihelper.ts#L14">ahoi/ahoihelper.ts:14</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -175,6 +183,36 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getapiurl" class="tsd-anchor"></a>
+					<h3>get<wbr>Api<wbr>Url</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Api<wbr>Url<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/sparkassen-hub/ahoi-nodejs-client/blob/9f254fc/src/starfinanz/ahoi/ahoihelper.ts#L57">ahoi/ahoihelper.ts:57</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Return the API url used to get data from AHOI.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><p><a href="https://banking-sandbox.starfinanz.de/ahoi/api/v2">https://banking-sandbox.starfinanz.de/ahoi/api/v2</a></p>
+									</dd>
+									<dt>memberof</dt>
+									<dd><p>AhoiHelper</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="getbankingtoken" class="tsd-anchor"></a>
 					<h3>get<wbr>Banking<wbr>Token</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
@@ -184,7 +222,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/sparkassen-hub/ahoi-nodejs-client/blob/39fe511/src/starfinanz/ahoi/ahoihelper.ts#L26">ahoi/ahoihelper.ts:26</a></li>
+									<li>Defined in <a href="https://github.com/sparkassen-hub/ahoi-nodejs-client/blob/9f254fc/src/starfinanz/ahoi/ahoihelper.ts#L28">ahoi/ahoihelper.ts:28</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -198,6 +236,36 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getbaseurl" class="tsd-anchor"></a>
+					<h3>get<wbr>Base<wbr>Url</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Base<wbr>Url<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/sparkassen-hub/ahoi-nodejs-client/blob/9f254fc/src/starfinanz/ahoi/ahoihelper.ts#L45">ahoi/ahoihelper.ts:45</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Return the base url that is used e.g. to authenticate the app against AHOI.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><p><a href="https://banking-sandbox.starfinanz.de">https://banking-sandbox.starfinanz.de</a></p>
+									</dd>
+									<dt>memberof</dt>
+									<dd><p>AhoiHelper</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="getclientauthtoken" class="tsd-anchor"></a>
 					<h3>get<wbr>Client<wbr>Auth<wbr>Token</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
@@ -207,7 +275,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/sparkassen-hub/ahoi-nodejs-client/blob/39fe511/src/starfinanz/ahoi/ahoihelper.ts#L31">ahoi/ahoihelper.ts:31</a></li>
+									<li>Defined in <a href="https://github.com/sparkassen-hub/ahoi-nodejs-client/blob/9f254fc/src/starfinanz/ahoi/ahoihelper.ts#L33">ahoi/ahoihelper.ts:33</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="token.html" class="tsd-signature-type">Token</a><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -265,7 +333,13 @@
 								<a href="ahoihelper.html#encryptinstallationid" class="tsd-kind-icon">encrypt<wbr>Installation<wbr>Id</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="ahoihelper.html#getapiurl" class="tsd-kind-icon">get<wbr>Api<wbr>Url</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="ahoihelper.html#getbankingtoken" class="tsd-kind-icon">get<wbr>Banking<wbr>Token</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="ahoihelper.html#getbaseurl" class="tsd-kind-icon">get<wbr>Base<wbr>Url</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="ahoihelper.html#getclientauthtoken" class="tsd-kind-icon">get<wbr>Client<wbr>Auth<wbr>Token</a>
