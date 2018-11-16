@@ -1,6 +1,6 @@
 {
   "name": "ahoi-nodejs-client",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description": "Client that allows to connect with AHOI Open Banking API",
   "homepage": "https://github.com/sparkassen-hub/ahoi-nodejs-client",
   "repository": {
