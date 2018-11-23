@@ -67,10 +67,10 @@ A) Include the module in your code
 
 ```typescript
 // Typescript
-import { AhoiApiFactory } from 'ahoi-api-node';
+import { AhoiApiFactory } from 'ahoi-nodejs-client';
 
 // JavaScript
-const { AhoiApiFactory } = require('ahoi-api-node');
+const { AhoiApiFactory } = require('ahoi-nodejs-client');
 ```
 
 B) Add the configuration to access the AHOI API
