@@ -19,7 +19,7 @@
     "doc": "./node_modules/typedoc/bin/typedoc --out ./docs ./src --target ES6 --hideGenerator --module commonjs --excludePrivate --excludeProtected --excludeExternals --mode file --theme default",
     "predoc": "rimraf ./docs",
     "postdoc": "cpx ./AHOI-Logo.png ./docs/ && cpx ./_config.yml ./docs",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "dependencies": {
     "ahoi-swagger-fetchclient": "https://github.com/sparkassen-hub/ahoi-swagger-fetchclient#v0.0.2",
@@ -28,10 +28,14 @@
   },
   "devDependencies": {
     "@types/crypto-js": "^3.1.41",
+    "@types/jest": "^24.0.11",
     "@types/jsonwebtoken": "^7.2.8",
     "@types/node-fetch": "^2.1.2",
     "cpx": "^1.5.0",
+    "jest": "^24.7.0",
+    "jest-fetch-mock": "^2.1.1",
     "rimraf": "^2.6.2",
+    "ts-jest": "^24.0.1",
     "tslint": "5.11.0",
     "tslint-config-airbnb": "^5.11.0",
     "typedoc": "^0.13.0",
